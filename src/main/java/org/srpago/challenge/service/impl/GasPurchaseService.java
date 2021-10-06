@@ -17,12 +17,16 @@ import org.srpago.challenge.service.GasPurchaseServiceInterface;
 @Service
 public class GasPurchaseService implements GasPurchaseServiceInterface {
 
-    @Autowired
     GasolineDataClient gasolineDataClient;
-    @Autowired
     GasPurchaseRepository gasPurchaseRepository;
-    @Autowired
     GasPurchaseMapper gasPurchaseMapper;
+
+    @Autowired
+    public GasPurchaseService(GasolineDataClient gasolineDataClient, GasPurchaseRepository gasPurchaseRepository, GasPurchaseMapper gasPurchaseMapper) {
+        this.gasolineDataClient = gasolineDataClient;
+        this.gasPurchaseRepository = gasPurchaseRepository;
+        this.gasPurchaseMapper = gasPurchaseMapper;
+    }
 
     public Response buyGasoline(InfoRQ infoRQ) throws ResourceNotFoundException, GasolineDataClientException {
 

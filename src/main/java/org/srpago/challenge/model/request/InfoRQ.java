@@ -1,11 +1,13 @@
 package org.srpago.challenge.model.request;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import javax.validation.constraints.*;
 
 @Getter
 @Setter
+@Builder
 public class InfoRQ{
 
     @NotNull(message = "Please provide a email")
