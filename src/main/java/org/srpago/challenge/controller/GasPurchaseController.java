@@ -33,8 +33,4 @@ public class GasPurchaseController {
         return ResponseEntity.ok(this.gasPurchaseService.buyGasoline(infoRQ));
     }
 
-    @GetMapping("/isAlive")
-    public ResponseEntity isAlive() {
-        return ResponseEntity.ok("Estoy vivo!!!");
-    }
 }
